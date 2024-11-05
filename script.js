@@ -37,35 +37,55 @@
 
     let fungusHP = 100
     let heroAP = 100
+    let minHP = 0
+    let minAP = 0
+
+    function updateUI() {
+        // Update AP and HP text
+        document.querySelector('.ap-text').textContent = `${heroAP} AP`;
+        document.querySelector('.hp-text').textContent = `${fungusHP} HP`;
+    
+        // Update progress bars
+        document.getElementById('ap-meter').value = heroAP;
+        document.getElementById('hp-meter').value = fungusHP;
+    }
 
     function arcaneSceptor() {
         //testing that the function is called when button is clicked:
         console.log( 'Hero attacked using Arcane Sceptor!')
-
-        heroAP - 12
-        fungusHP - 14
+        
+        //Updating the text and the progress bars:
+        heroAP = Math.max(minAP, heroAP - 12);
+        fungusHP = Math.max(minHP, fungusHP - 14);
+        updateUI();
     }
 
-    function entangle() {
+    function entangle(event) {
         //testing that the function is called when button is clicked:
         console.log( 'Hero attacked using Entangle!')
 
-        heroAP - 23
-        fungusHP - 9
+        //Updating the text and the progress bars:
+        heroAP = Math.max(minAP, heroAP - 23);
+        fungusHP = Math.max(minHP, fungusHP - 9);
+        updateUI();
     }
 
-    function dragonBlade() {
+    function dragonBlade(event) {
         //testing that the function is called when button is clicked:
         console.log( 'Hero attacked using Dragon Blade!')
 
-        heroAP - 38
-        fungusHP - 47
+        //Updating the text and the progress bars:
+        heroAP = Math.max(minAP, heroAP - 38);
+        fungusHP = Math.max(minHP, fungusHP - 47);
+        updateUI();
     }
 
-    function starFire() {
+    function starFire(event) {
         //testing that the function is called when button is clicked:
         console.log( 'Hero attacked using Star Fire!')
 
-        heroAP - 33
-        fungusHP - 25
+        //Updating the text and the progress bars:
+        heroAP = Math.max(minAP, heroAP - 33);
+        fungusHP = Math.max(minHP, fungusHP - 25);
+        updateUI();
     }
