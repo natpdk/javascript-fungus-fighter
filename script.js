@@ -22,8 +22,8 @@
         //DOM Needs To:
             //DONE -- Update text above the attack buttons
             //DONE -- Update the text above the fungus
-            //If the fungus dies, have it switch from CSS class "walk" to CSS class "dead"
-            //If I run out of AP, have the fungus css class swith from "walk" to "jump"
+            //DONE If the fungus dies, have it switch from CSS class "walk" to CSS class "dead"
+            //DONE If I run out of AP, have the fungus css class swith from "walk" to "jump"
             //When AP reached 0, disable all the attack buttons
 
     //My Initial Notes:
@@ -54,6 +54,12 @@
         if (fungusHP <= 0) {
         fungusElement.classList.remove('walk');
         fungusElement.classList.add('dead');
+    } else if (heroAP <= 0) {
+        fungusElement.classList.remove('walk')
+        fungusElement.classList.add('jump')
+        document.querySelectorAll('button').forEach (button => {
+            button.disabled = true;
+        });
     }
     }
 
